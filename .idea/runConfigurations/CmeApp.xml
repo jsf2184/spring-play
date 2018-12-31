@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="CmeApp" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.jeff.fischman.App" />
+    <module name="springplay" />
+    <option name="PROGRAM_PARAMETERS" value="--spring.config.location=classpath:config/myapp.properties --price.platform=cme" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.jeff.fischman.condition.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
