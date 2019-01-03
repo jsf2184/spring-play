@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class ConstructionTests {
+public class ContextBootstrappingTests {
 
     @Test
     public void testIfAnnotationConfigApplicationContextHasBeanFactory() {
@@ -26,6 +26,11 @@ public class ConstructionTests {
         Assert.assertNotNull(eurexConfig.getBeanFactory());
         Assert.assertSame(eurexConfig.getBeanFactory(), context.getBeanFactory());
     }
+
+    //***************************************************************************************
+    // Note that some of the following tests utilize the same underlying technology that is
+    // encapsulated into the static methods in PriceServiceFactory
+    //***************************************************************************************
 
     @Test
     public void testEurexPriceServiceCreationWithEurexConfig() {
@@ -56,7 +61,7 @@ public class ConstructionTests {
         getPriceServiceByName(context, "priceService", false);
     }
 
-    void getPriceServiceByName(AnnotationConfigApplicationContext context, String name, boolean expectSuccess) {
+    private void getPriceServiceByName(AnnotationConfigApplicationContext context, String name, boolean expectSuccess) {
         boolean success = false;
         try {
             PriceService res = (PriceService) context.getBean(name);

@@ -5,13 +5,12 @@ import com.jeff.fischman.price.service.CmePriceService;
 import com.jeff.fischman.price.service.EurexPriceService;
 import com.jeff.fischman.price.service.PlatformDependency;
 import com.jeff.fischman.price.service.PriceService;
-import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 
 public class ConditionalConfig {
-    ConfigurableListableBeanFactory _beanFactory;
+    private ConfigurableListableBeanFactory _beanFactory;
 
     public ConditionalConfig(ConfigurableListableBeanFactory beanFactory) {
         _beanFactory = beanFactory;
